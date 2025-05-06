@@ -1,0 +1,8 @@
+Please note: This is a placeholder for an HTML5 logo image.
+In a real project, this would be an actual image file.
+For the purposes of this exercise, you can download an HTML5 logo from the official source.
+
+The HTML5 logo is typically orange with the text "HTML5" or just the number "5" inside a shield shape.
+
+Example usage in HTML:
+<img src="images/html5_logo.png" alt="HTML5 Logo" width="200">

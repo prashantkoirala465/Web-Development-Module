@@ -1,0 +1,8 @@
+Please note: This is a placeholder for a profile image.
+In a real project, this would be an actual image file.
+For the purposes of this exercise, you should download a profile picture and save it as profile.jpg.
+
+A profile picture for an ID card is typically a formal headshot with a neutral background.
+
+Example usage in HTML:
+<img src="images/profile.jpg" alt="Student Photo" class="profile-image">
