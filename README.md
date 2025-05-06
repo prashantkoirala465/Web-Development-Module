@@ -33,7 +33,7 @@ The project is unified by a professional, Apple-inspired landing page that serve
 ## Project Structure
 
 ```
-web-development/
+web-development-module/
 ├── index.html               # Main landing page with bento grid showcase
 ├── assets/                  # Shared assets for landing page
 │   ├── css/                 # CSS stylesheets
@@ -189,8 +189,8 @@ All components of this project implement responsive design principles, ensuring 
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/prashantkoirala/web-development.git
-   cd web-development
+   git clone https://github.com/prashantkoirala/web-development-module.git
+   cd web-development-module
    ```
 
 2. **Local Development:**
