@@ -260,4 +260,4 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ---
 
-Created with ❤️ by Prashant Koirala © 2024 
+Created with ❤️ by Prashant Koirala © 2025
