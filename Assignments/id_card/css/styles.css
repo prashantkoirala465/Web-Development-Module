@@ -1,0 +1,168 @@
+/*
+ * ID Card Assignment - CSS Styles
+ */
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ID Card Container */
+.id-card {
+    width: 350px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.id-card:hover {
+    transform: scale(1.02);
+}
+
+/* Card Header */
+.card-header {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.card-header h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.card-header p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Profile Section */
+.profile-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #3498db;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.profile-name {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.profile-title {
+    color: #777;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+/* Information Section */
+.info-section {
+    padding: 0 20px 20px 20px;
+}
+
+.info-item {
+    display: flex;
+    margin-bottom: 12px;
+    align-items: center;
+}
+
+.info-label {
+    flex: 0 0 80px;
+    font-weight: bold;
+    color: #3498db;
+}
+
+.info-value {
+    flex: 1;
+}
+
+/* Contact Bar */
+.contact-bar {
+    display: flex;
+    justify-content: center;
+    background-color: #f1f1f1;
+    padding: 15px;
+}
+
+.contact-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #3498db;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.contact-icon:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+}
+
+/* QR Code Section */
+.qr-section {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
+
+.qr-code {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 10px;
+}
+
+.qr-text {
+    font-size: 12px;
+    color: #777;
+}
+
+/* Card Footer */
+.card-footer {
+    background-color: #3498db;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+    .id-card {
+        width: 100%;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+}

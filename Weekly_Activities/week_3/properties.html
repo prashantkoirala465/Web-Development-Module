@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Properties - Week 3</title>
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Additional styles specific to this page */
+        .property-demo {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+
+        .preview-box {
+            height: 100px;
+            width: 100px;
+            display: inline-block;
+            margin: 10px;
+            background-color: #3498db;
+            text-align: center;
+            line-height: 100px;
+            color: white;
+        }
+
+        .border-demo .preview-box {
+            background-color: white;
+            color: #333;
+        }
+
+        .border-solid { border: 3px solid #3498db; }
+        .border-dashed { border: 3px dashed #3498db; }
+        .border-dotted { border: 3px dotted #3498db; }
+        .border-double { border: 3px double #3498db; }
+
+        .bg-color { background-color: #e74c3c; }
+        .bg-gradient {
+            background: linear-gradient(to right, #3498db, #2ecc71);
+        }
+        .bg-image {
+            background-image: url('images/pattern.png');
+            background-size: cover;
+        }
+
+        .text-left { text-align: left; }
+        .text-center { text-align: center; }
+        .text-right { text-align: right; }
+        .text-justify { text-align: justify; }
+
+        .display-block { display: block; width: 100%; margin: 5px 0; }
+        .display-inline { display: inline; }
+        .display-inline-block { display: inline-block; width: 150px; }
+        .display-flex {
+            display: flex;
+            justify-content: space-between;
+            background-color: #f1f1f1;
+            padding: 10px;
+        }
+        .flex-item {
+            padding: 20px;
+            background-color: #3498db;
+            color: white;
+        }
+
+        .pos-relative {
+            position: relative;
+            background-color: #f1f1f1;
+            height: 150px;
+            width: 100%;
+        }
+        .pos-absolute {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            background-color: #e74c3c;
+        }
+
+        .float-left { float: left; margin-right: 15px; }
+        .float-right { float: right; margin-left: 15px; }
+        .clear-both { clear: both; }
+
+        .transform-scale:hover { transform: scale(1.2); transition: 0.3s; }
+        .transform-rotate:hover { transform: rotate(45deg); transition: 0.3s; }
+        .transform-skew:hover { transform: skew(10deg); transition: 0.3s; }
+
+        .transition-demo {
+            transition: all 0.5s ease;
+        }
+        .transition-demo:hover {
+            background-color: #e74c3c;
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CSS Properties</h1>
+            <p>Week 3 - Exploring various CSS properties</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="properties.html">CSS Properties</a></li>
+                <li><a href="layout.html">CSS Layout</a></li>
+            </ul>
+        </nav>
+
+        <section class="full-width">
+            <h2>Common CSS Properties</h2>
+            <p>CSS properties allow you to control virtually every visual aspect of your web pages. This page demonstrates some of the most commonly used properties and their effects.</p>
+        </section>
+
+        <section class="full-width property-demo">
+            <h3>Border Properties</h3>
+            <p>The border property allows you to specify the style, width, and color of an element's border.</p>
+
+            <div class="border-demo">
+                <div class="preview-box border-solid">Solid</div>
+                <div class="preview-box border-dashed">Dashed</div>
+                <div class="preview-box border-dotted">Dotted</div>
+                <div class="preview-box border-double">Double</div>
+            </div>
+
+            <div class="code-block">
+                .border-solid { border: 3px solid #3498db; }<br>
+                .border-dashed { border: 3px dashed #3498db; }<br>
+                .border-dotted { border: 3px dotted #3498db; }<br>
+                .border-double { border: 3px double #3498db; }
+            </div>
+        </section>
+
+        <section class="full-width property-demo">
+            <h3>Background Properties</h3>
+            <p>Background properties let you control the background of elements with colors, gradients, or images.</p>
+
+            <div>
+                <div class="preview-box bg-color">Color</div>
+                <div class="preview-box bg-gradient">Gradient</div>
+                <div class="preview-box bg-image">Image</div>
+            </div>
+
+            <div class="code-block">
+                .bg-color { background-color: #e74c3c; }<br>
+                .bg-gradient { background: linear-gradient(to right, #3498db, #2ecc71); }<br>
+                .bg-image { background-image: url('images/pattern.png'); background-size: cover; }
+            </div>
+        </section>
+
+        <section class="full-width property-demo">
+            <h3>Text Alignment</h3>
+            <p>The text-align property specifies the horizontal alignment of text in an element.</p>
+
+            <div class="card text-left">This text is aligned to the left.</div>
+            <div class="card text-center">This text is centered.</div>
+            <div class="card text-right">This text is aligned to the right.</div>
+            <div class="card text-justify">This text is justified. It will stretch the lines so that each line has equal width. This is often used in newspapers and magazines. Notice how the spacing between words is adjusted to ensure the text spans the entire width.</div>
+
+            <div class="code-block">
+                .text-left { text-align: left; }<br>
+                .text-center { text-align: center; }<br>
+                .text-right { text-align: right; }<br>
+                .text-justify { text-align: justify; }
+            </div>
+        </section>
+
+        <section class="full-width property-demo">
+            <h3>Display Properties</h3>
+            <p>The display property specifies the display behavior of an element.</p>
+
+            <div>
+                <button class="display-block">Block Element</button>
+                <span class="display-inline">Inline Element</span>
+                <span class="display-inline">Another Inline Element</span>
+                <div class="display-inline-block">Inline-Block 1</div>
+                <div class="display-inline-block">Inline-Block 2</div>
+            </div>
+
+            <h4>Flexbox Example:</h4>
+            <div class="display-flex">
+                <div class="flex-item">Flex Item 1</div>
+                <div class="flex-item">Flex Item 2</div>
+                <div class="flex-item">Flex Item 3</div>
+            </div>
+
+            <div class="code-block">
+                .display-block { display: block; width: 100%; }<br>
+                .display-inline { display: inline; }<br>
+                .display-inline-block { display: inline-block; width: 150px; }<br>
+                .display-flex { display: flex; justify-content: space-between; }
+            </div>
+        </section>
+
+        <section class="full-width property-demo">
+            <h3>Position Properties</h3>
+            <p>The position property specifies the type of positioning method used for an element.</p>
+
+            <div class="pos-relative">
+                Parent (position: relative)
+                <div class="pos-absolute">Child (position: absolute)</div>
+            </div>
+
+            <div class="code-block">
+                .pos-relative { position: relative; height: 150px; width: 100%; }<br>
+                .pos-absolute { position: absolute; top: 20px; right: 20px; }
+            </div>
+        </section>
+
+        <section class="full-width property-demo">
+            <h3>Float Properties</h3>
+            <p>The float property specifies whether an element should float to the left or right, or not at all.</p>
+
+            <div>
+                <div class="preview-box float-left">Float Left</div>
+                <div class="preview-box float-right">Float Right</div>
+                <p>This text flows around the floated elements. Notice how the text wraps around the boxes that are floated to the left and right. This technique is commonly used for text wrapping around images.</p>
+                <div class="clear-both"></div>
+            </div>
+
+            <div class="code-block">
+                .float-left { float: left; margin-right: 15px; }<br>
+                .float-right { float: right; margin-left: 15px; }<br>
+                .clear-both { clear: both; }
+            </div>
+        </section>
+
+        <section class="full-width property-demo">
+            <h3>Transform Properties</h3>
+            <p>The transform property applies a 2D or 3D transformation to an element. (Hover over the boxes)</p>
+
+            <div>
+                <div class="preview-box transform-scale">Scale</div>
+                <div class="preview-box transform-rotate">Rotate</div>
+                <div class="preview-box transform-skew">Skew</div>
+            </div>
+
+            <div class="code-block">
+                .transform-scale:hover { transform: scale(1.2); }<br>
+                .transform-rotate:hover { transform: rotate(45deg); }<br>
+                .transform-skew:hover { transform: skew(10deg); }
+            </div>
+        </section>
+
+        <section class="full-width property-demo">
+            <h3>Transition Properties</h3>
+            <p>The transition property specifies the duration and timing function of the transition effect. (Hover over the box)</p>
+
+            <div class="preview-box transition-demo">Hover Me</div>
+
+            <div class="code-block">
+                .transition-demo { transition: all 0.5s ease; }<br>
+                .transition-demo:hover { background-color: #e74c3c; transform: translateY(-10px); }
+            </div>
+        </section>
+
+        <footer>
+            <p>Created during Week 3 of the Web Development Module</p>
+        </footer>
+    </div>
+</body>
+</html>

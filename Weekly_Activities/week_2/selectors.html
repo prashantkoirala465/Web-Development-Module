@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors - Week 2</title>
+    <style>
+        /* Base styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #4CAF50;
+        }
+
+        header h1 {
+            color: white;
+        }
+
+        section {
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+        }
+
+        /* Navigation styles */
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        nav li {
+            float: left;
+        }
+
+        nav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav li a:hover {
+            background-color: #4CAF50;
+        }
+
+        /* Selector examples */
+        /* Element Selector */
+        p {
+            margin-bottom: 15px;
+        }
+
+        /* Class Selector */
+        .highlight {
+            background-color: #ffff99;
+            padding: 5px;
+        }
+
+        /* ID Selector */
+        #unique-element {
+            border: 2px solid #4CAF50;
+            padding: 10px;
+            margin: 15px 0;
+        }
+
+        /* Descendant Selector */
+        .container p {
+            font-style: italic;
+        }
+
+        /* Child Selector */
+        .parent > span {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        /* Adjacent Sibling Selector */
+        h3 + p {
+            color: #3498db;
+        }
+
+        /* Attribute Selector */
+        [type="text"] {
+            border: 2px solid #9b59b6;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        /* Pseudo-class Selector */
+        a:hover {
+            color: #e74c3c;
+        }
+
+        li:first-child {
+            font-weight: bold;
+        }
+
+        li:last-child {
+            font-style: italic;
+        }
+
+        /* Pseudo-element Selector */
+        p.with-first-line::first-line {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        .with-first-letter::first-letter {
+            font-size: 2em;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS Selectors</h1>
+        <p>Week 2 - Learning about different CSS selectors</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="selectors.html">CSS Selectors</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <h2>Types of CSS Selectors</h2>
+        <p>CSS selectors are patterns used to select and style HTML elements. There are several types of selectors, each with different specificity and use cases.</p>
+    </section>
+
+    <section>
+        <h3>Element Selector</h3>
+        <p>The element selector selects HTML elements based on the element name.</p>
+        <p>Example: <code>p { color: blue; }</code> selects all &lt;p&gt; elements.</p>
+    </section>
+
+    <section>
+        <h3>Class Selector</h3>
+        <p>The class selector selects elements with a specific class attribute.</p>
+        <p>Example: <code>.highlight { background-color: yellow; }</code></p>
+        <p>This is a <span class="highlight">highlighted</span> text using a class selector.</p>
+    </section>
+
+    <section>
+        <h3>ID Selector</h3>
+        <p>The ID selector uses the id attribute of an HTML element to select a specific element.</p>
+        <p>Example: <code>#unique-element { border: 2px solid green; }</code></p>
+        <div id="unique-element">This element has a unique ID and is styled differently.</div>
+    </section>
+
+    <section>
+        <h3>Descendant Selector</h3>
+        <p>The descendant selector selects all elements that are descendants of a specified element.</p>
+        <p>Example: <code>.container p { font-style: italic; }</code></p>
+        <div class="container">
+            <p>This paragraph is inside a container and is styled with the descendant selector.</p>
+            <div>
+                <p>This nested paragraph is also affected by the descendant selector.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3>Child Selector</h3>
+        <p>The child selector selects all elements that are the direct children of a specified element.</p>
+        <p>Example: <code>.parent > span { font-weight: bold; }</code></p>
+        <div class="parent">
+            <span>This span is a direct child of the parent element.</span>
+            <div>
+                <span>This span is not a direct child, so it's not affected.</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3>Adjacent Sibling Selector</h3>
+        <p>The adjacent sibling selector selects an element that is directly after another specific element.</p>
+        <p>Example: <code>h3 + p { color: blue; }</code></p>
+        <h3>Adjacent Sibling Example</h3>
+        <p>This paragraph is right after an h3, so it's styled with the adjacent sibling selector.</p>
+        <p>This paragraph is not directly after an h3, so it has normal styling.</p>
+    </section>
+
+    <section>
+        <h3>Attribute Selector</h3>
+        <p>The attribute selector selects elements with a specific attribute.</p>
+        <p>Example: <code>[type="text"] { border: 2px solid purple; }</code></p>
+        <input type="text" placeholder="This input has a type attribute of 'text'">
+    </section>
+
+    <section>
+        <h3>Pseudo-class Selector</h3>
+        <p>Pseudo-classes are used to define a special state of an element.</p>
+        <p>Examples: <code>:hover</code>, <code>:first-child</code>, <code>:last-child</code></p>
+        <p><a href="#">Hover over this link</a> to see the hover effect.</p>
+        <ul>
+            <li>This is the first item in the list.</li>
+            <li>This is a middle item.</li>
+            <li>This is the last item in the list.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Pseudo-element Selector</h3>
+        <p>Pseudo-elements are used to style specified parts of an element.</p>
+        <p>Examples: <code>::first-line</code>, <code>::first-letter</code></p>
+        <p class="with-first-line">This paragraph has its first line styled differently. This is a longer paragraph to demonstrate how the first line is affected by the pseudo-element selector. As you can see, only the first line has different styling.</p>
+        <p class="with-first-letter">This paragraph has its first letter styled differently. Notice how much larger and greener it is compared to the rest of the text.</p>
+    </section>
+
+    <footer>
+        <p>Created during Week 2 of the Web Development Module</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries - Week 4</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Additional styles specific to this page */
+        .demo-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .code-example {
+            background-color: #f5f5f5;
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+
+        .device-demo {
+            height: 200px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            background-color: #3498db;
+            border-radius: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Media query demo styles */
+        @media (max-width: 576px) {
+            .device-demo {
+                background-color: #e74c3c;
+            }
+            #screenSize:after {
+                content: "Mobile (max-width: 576px)";
+            }
+        }
+
+        @media (min-width: 577px) and (max-width: 768px) {
+            .device-demo {
+                background-color: #f39c12;
+            }
+            #screenSize:after {
+                content: "Tablet Small (577px - 768px)";
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 992px) {
+            .device-demo {
+                background-color: #2ecc71;
+            }
+            #screenSize:after {
+                content: "Tablet Large (769px - 992px)";
+            }
+        }
+
+        @media (min-width: 993px) and (max-width: 1200px) {
+            .device-demo {
+                background-color: #9b59b6;
+            }
+            #screenSize:after {
+                content: "Desktop Small (993px - 1200px)";
+            }
+        }
+
+        @media (min-width: 1201px) {
+            .device-demo {
+                background-color: #34495e;
+            }
+            #screenSize:after {
+                content: "Desktop Large (1201px+)";
+            }
+        }
+
+        /* Orientation demo */
+        @media (orientation: landscape) {
+            #orientation:after {
+                content: "Landscape Orientation";
+            }
+            .orientation-demo {
+                width: 100%;
+                height: 100px;
+                margin: 20px 0;
+                background-color: #3498db;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-weight: bold;
+            }
+        }
+
+        @media (orientation: portrait) {
+            #orientation:after {
+                content: "Portrait Orientation";
+            }
+            .orientation-demo {
+                width: 100px;
+                height: 200px;
+                margin: 20px auto;
+                background-color: #e74c3c;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-weight: bold;
+                writing-mode: vertical-rl;
+                text-orientation: mixed;
+            }
+        }
+
+        /* Print media demo */
+        @media print {
+            .print-only {
+                display: block;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+
+        .print-only {
+            display: none;
+            border: 2px dashed #333;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        /* Media features demo */
+        .media-features-demo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .media-features-demo {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .feature-box {
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">Responsive<span>Design</span></div>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="media-queries.html">Media Queries</a></li>
+                    <li><a href="flexbox.html">Flexbox</a></li>
+                    <li><a href="grid.html">CSS Grid</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>CSS Media Queries</h1>
+            <p>Learn how to use media queries to create responsive designs that adapt to different screen sizes and device characteristics.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <section class="demo-section">
+            <h2>What are Media Queries?</h2>
+            <p>Media queries are a key component of responsive web design. They allow you to apply different CSS styles based on various device characteristics or parameters, such as:</p>
+            <ul>
+                <li>Screen width and height</li>
+                <li>Device orientation (portrait or landscape)</li>
+                <li>Display type (screen, print, etc.)</li>
+                <li>Resolution</li>
+                <li>And many other features</li>
+            </ul>
+            <p>Media queries help create websites that look good and function well on devices of all sizes, from mobile phones to desktop computers.</p>
+        </section>
+
+        <section class="demo-section">
+            <h2>Basic Media Query Syntax</h2>
+            <p>The basic syntax of a media query includes a media type and one or more expressions that check for specific conditions of that media type:</p>
+            <div class="code-example">
+                @media mediatype and (expression) {<br>
+                &nbsp;&nbsp;/* CSS rules to apply when the conditions are true */<br>
+                }
+            </div>
+            <p>Common media types include:</p>
+            <ul>
+                <li><strong>all</strong> - Suitable for all devices (default)</li>
+                <li><strong>screen</strong> - Computers, tablets, mobile phones, etc.</li>
+                <li><strong>print</strong> - Print preview mode/printed pages</li>
+                <li><strong>speech</strong> - Screen readers</li>
+            </ul>
+            <p>Example of a media query that applies styles when the screen width is 600px or less:</p>
+            <div class="code-example">
+                @media screen and (max-width: 600px) {<br>
+                &nbsp;&nbsp;body {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;background-color: lightblue;<br>
+                &nbsp;&nbsp;}<br>
+                }
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Live Demo: Screen Size Detection</h2>
+            <p>This demo changes color based on your current screen width. Resize your browser window to see it change:</p>
+            <div class="device-demo">
+                <div id="screenSize"></div>
+            </div>
+            <p>The CSS for this demo uses different media queries to change the background color and text based on screen width:</p>
+            <div class="code-example">
+                /* Mobile */<br>
+                @media (max-width: 576px) {<br>
+                &nbsp;&nbsp;.device-demo { background-color: #e74c3c; }<br>
+                &nbsp;&nbsp;#screenSize:after { content: "Mobile (max-width: 576px)"; }<br>
+                }<br><br>
+
+                /* Tablet Small */<br>
+                @media (min-width: 577px) and (max-width: 768px) {<br>
+                &nbsp;&nbsp;.device-demo { background-color: #f39c12; }<br>
+                &nbsp;&nbsp;#screenSize:after { content: "Tablet Small (577px - 768px)"; }<br>
+                }<br><br>
+
+                /* And so on for other screen sizes... */
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Common Breakpoints</h2>
+            <p>While you can set breakpoints anywhere, these are commonly used screen width breakpoints:</p>
+            <ul>
+                <li><strong>Extra small devices (phones)</strong>: up to 576px</li>
+                <li><strong>Small devices (large phones, small tablets)</strong>: 577px to 768px</li>
+                <li><strong>Medium devices (tablets)</strong>: 769px to 992px</li>
+                <li><strong>Large devices (desktops)</strong>: 993px to 1200px</li>
+                <li><strong>Extra large (large desktops)</strong>: 1201px and above</li>
+            </ul>
+            <p>It's important to note that these breakpoints should be tailored to your specific design needs rather than strictly following these conventions.</p>
+        </section>
+
+        <section class="demo-section">
+            <h2>Orientation Media Queries</h2>
+            <p>You can apply different styles based on whether the device is in portrait or landscape orientation:</p>
+            <div class="code-example">
+                @media (orientation: landscape) {<br>
+                &nbsp;&nbsp;/* Styles for landscape orientation */<br>
+                }<br><br>
+
+                @media (orientation: portrait) {<br>
+                &nbsp;&nbsp;/* Styles for portrait orientation */<br>
+                }
+            </div>
+            <p>Current orientation demo:</p>
+            <div class="orientation-demo">
+                <div id="orientation"></div>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Print Media Queries</h2>
+            <p>You can define styles specifically for printed pages:</p>
+            <div class="code-example">
+                @media print {<br>
+                &nbsp;&nbsp;/* Styles applied when printing */<br>
+                &nbsp;&nbsp;.no-print { display: none; }<br>
+                &nbsp;&nbsp;.print-only { display: block; }<br>
+                }
+            </div>
+            <p class="no-print">This paragraph will be hidden when you print this page.</p>
+            <div class="print-only">
+                <h3>Print Version</h3>
+                <p>This content only appears when printing. Try using your browser's print preview feature to see it.</p>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Other Media Features</h2>
+            <p>Beyond screen size and orientation, you can use many other media features in your queries:</p>
+            <div class="media-features-demo">
+                <div class="feature-box">
+                    <h3>Resolution</h3>
+                    <div class="code-example">
+                        @media (min-resolution: 192dpi) {<br>
+                        &nbsp;&nbsp;/* High-resolution screens */<br>
+                        }
+                    </div>
+                </div>
+                <div class="feature-box">
+                    <h3>Hover Capability</h3>
+                    <div class="code-example">
+                        @media (hover: hover) {<br>
+                        &nbsp;&nbsp;/* Devices that can hover */<br>
+                        }
+                    </div>
+                </div>
+                <div class="feature-box">
+                    <h3>Preferred Color Scheme</h3>
+                    <div class="code-example">
+                        @media (prefers-color-scheme: dark) {<br>
+                        &nbsp;&nbsp;/* User prefers dark mode */<br>
+                        }
+                    </div>
+                </div>
+                <div class="feature-box">
+                    <h3>Pointer Precision</h3>
+                    <div class="code-example">
+                        @media (pointer: coarse) {<br>
+                        &nbsp;&nbsp;/* Touch input devices */<br>
+                        }
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Best Practices</h2>
+            <ul>
+                <li><strong>Mobile First Approach</strong>: Design for mobile devices first, then progressively enhance for larger screens.</li>
+                <li><strong>Use Relative Units</strong>: Use em, rem, %, vh, vw instead of pixels for flexible layouts.</li>
+                <li><strong>Don't Rely Only on Screen Size</strong>: Consider using feature queries where appropriate.</li>
+                <li><strong>Test on Real Devices</strong>: Simulators and emulators can be helpful, but nothing beats testing on actual devices.</li>
+                <li><strong>Keep It Simple</strong>: Use as few breakpoints as necessary to achieve your design goals.</li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>About</h3>
+                    <p>This website is part of the Week 4 learning materials for the Web Development Module, focusing on responsive design techniques.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="media-queries.html">Media Queries</a></li>
+                        <li><a href="flexbox.html">Flexbox</a></li>
+                        <li><a href="grid.html">CSS Grid</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries" target="_blank">MDN: Media Queries</a></li>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout" target="_blank">MDN: Flexbox</a></li>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout" target="_blank">MDN: CSS Grid</a></li>
+                        <li><a href="https://web.dev/responsive-web-design-basics/" target="_blank">Web.dev: Responsive Basics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fab fa-github"></i> GitHub</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Web Development Module - Week 4: Responsive Design</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script for mobile navigation toggle
+        const navToggle = document.getElementById('navToggle');
+        const mainNav = document.getElementById('mainNav');
+
+        navToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
