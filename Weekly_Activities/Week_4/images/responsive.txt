@@ -1,8 +1,0 @@
-Please note: This is a placeholder for a responsive design illustration image.
-In a real project, this would be an actual image file.
-For the purposes of this exercise, you should download an image that illustrates responsive design (showing a website on different devices) and save it as responsive.jpg.
-
-A responsive design illustration typically shows the same website displayed on multiple devices (desktop, tablet, and mobile phone) demonstrating how the layout adapts to different screen sizes.
-
-Example usage in HTML:
-<img src="images/responsive.jpg" alt="Responsive Design Illustration">

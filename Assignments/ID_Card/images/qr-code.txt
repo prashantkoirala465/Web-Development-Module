@@ -1,8 +1,0 @@
-Please note: This is a placeholder for a QR code image.
-In a real project, this would be an actual image file.
-For the purposes of this exercise, you should generate a QR code image and save it as qr-code.jpg.
-
-A QR code image is a square barcode that can be scanned by a smartphone camera to access information.
-
-Example usage in HTML:
-<img src="images/qr-code.jpg" alt="QR Code" width="100" height="100">

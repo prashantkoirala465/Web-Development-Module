@@ -1,8 +1,0 @@
-Please note: This is a placeholder for a video thumbnail image.
-In a real project, this would be an actual image file.
-For the purposes of this exercise, you should download an image that represents a video tutorial and save it as video-thumbnail.jpg.
-
-A video thumbnail for a web development tutorial could show code on screen, a person explaining something, or a combination of both with a title overlay.
-
-Example usage in HTML:
-<img src="images/video-thumbnail.jpg" alt="Video Tutorial">

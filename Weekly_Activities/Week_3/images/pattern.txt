@@ -1,9 +1,0 @@
-Please note: This is a placeholder for a pattern image.
-In a real project, this would be an actual image file.
-For the purposes of this exercise, you should download a simple pattern image and save it as pattern.png.
-
-Pattern images are typically small, repeating designs that tile seamlessly when used as backgrounds.
-
-Example usage in CSS:
-background-image: url('images/pattern.png');
-background-repeat: repeat;

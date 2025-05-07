@@ -1,8 +1,0 @@
-Please note: This is a placeholder for an about section image.
-In a real project, this would be an actual image file.
-For the purposes of this exercise, you should download an image that represents your team or learning environment and save it as about-image.jpg.
-
-An about section image for a web development company could show a team working together, a classroom setting, or an office environment.
-
-Example usage in HTML:
-<img src="images/about-image.jpg" alt="About TechLearn">

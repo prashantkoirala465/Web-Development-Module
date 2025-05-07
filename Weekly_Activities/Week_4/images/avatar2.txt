@@ -1,8 +1,0 @@
-Please note: This is a placeholder for an avatar image.
-In a real project, this would be an actual image file.
-For the purposes of this exercise, you should download or create a profile picture and save it as avatar2.jpg.
-
-Avatar images are typically square and represent a person's profile picture.
-
-Example usage in HTML:
-<img src="images/avatar2.jpg" alt="Student Avatar">
